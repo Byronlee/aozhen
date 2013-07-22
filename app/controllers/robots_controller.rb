@@ -29,7 +29,8 @@ class RobotsController < ApplicationController
 
   def send_http_request command_xml
     EventMachine.run {
-      http = EventMachine::HttpRequest.new(Settings.http_request_path).post :body => command_xml
+   #   http = EventMachine::HttpRequest.new('http://google.com/').post :body => {:string => [:value1, :value2]}
+      http = EventMachine::HttpRequest.new(Settings.http_request_path).post :body => {:command => "mmand_xml"}
       http.errback { flash[:error]="响应请求失败！，命令没执行，从从新发送！" ; EM.stop }
       http.callback {
         flash[:success] ="响应请求成功，命令成功执行！"
@@ -44,12 +45,8 @@ class RobotsController < ApplicationController
     xml = Builder::XmlMarkup.new( :indent => 2 )
     xml.instruct! :xml, :encoding => "UTF-8"    
     return xml.command {|d| d.value data} if tyle.eql? "command"
-    xml.defalut_config do |d|
-      d.length data[:lenght]
-      d.widht  data[:widht]
-      d.x      data[:x]
-      d.y      data[:y]
-      d.d      data[:d]
+    xml.defalut_config do |d|      
+      data.map {|k,_| d.send(k.to_sym,k)}
     end
   end
 end
