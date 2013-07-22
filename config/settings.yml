@@ -1,0 +1,12 @@
+# encoding: utf-8
+defaults: &defaults
+  xml_path: '/home/simlegate/aozhen/db/foo.xml'
+  http_request_path: 'http://localhost:3001'
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
