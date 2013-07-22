@@ -1,0 +1,21 @@
+h1 目前xml配置内容
+
+p = @config
+
+h1 向机器人发送指令：
+hr
+form.form-horizontal action="#{command_path}" method="post"
+    
+  .control-group
+    label.control-label for="inputEmail"　输入你要发送的指令（可选）：
+    .controls
+      label class="radio"
+        input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" R
+      label class="radio"
+        input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" L
+      label class="radio"
+        input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" M
+  .control-group
+    .controls
+      button type="submit" class="btn btn-primary" data-disable-with="处理中..." 确定
+

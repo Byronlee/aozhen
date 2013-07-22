@@ -1,0 +1,28 @@
+h1 初始化机器人坐标：
+hr
+form.form-horizontal action="#{robots_path}" method="post"
+    
+  .control-group
+    label.control-label for="inputEmail" 棋盘长
+    .controls
+      input type="text" name="length"
+  .control-group
+    label.control-label for="inputEmail" 棋盘宽
+    .controls
+      input type="text" name="width"
+
+  .control-group
+    label.control-label for="inputEmail" 机器人x轴位置
+    .controls
+      input type="text" name="x"
+  .control-group
+    label.control-label for="inputEmail" 机器人y轴位置
+    .controls
+      input type="text" name="y"
+  .control-group
+    label.control-label for="inputEmail" 机器人所在方向
+    .controls
+      input type="text" name="d"
+  .control-group
+    .controls
+      button type="submit" class="btn btn-primary" data-disable-with="处理中..." 确定
