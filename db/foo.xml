@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defalut_config>
-  <length/>
-  <widht/>
-  <x>3</x>
-  <y>3</y>
-  <d>E</d>
+  <send:length>length</send:length>
+  <send:width>width</send:width>
+  <send:x>x</send:x>
+  <send:y>y</send:y>
+  <send:d>d</send:d>
+  <send:action>action</send:action>
+  <send:controller>controller</send:controller>
 </defalut_config>
